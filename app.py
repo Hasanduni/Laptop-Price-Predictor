@@ -13,6 +13,8 @@ try:
     df = pickle.load(open('lapbeforeencodedf.pkl', 'rb'))
 except FileNotFoundError as fnf_error:
     st.error(f"File not found: {fnf_error}")
+except ModuleNotFoundError as mnf_error:
+    st.error(f"Module not found: {mnf_error}. Please make sure all required libraries are installed.")
 except Exception as e:
     st.error(f"Error loading files: {e}")
 
